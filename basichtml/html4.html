@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+    <table> <!--<table>表格标签 -->
+        <tr> <!-- <tr> 行标签 -->
+            <td>15</td> <!-- <td> 列标签 -->
+            <td>15</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>60</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>90</td>
+            <td>60</td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th></th> <!-- <th> 用法和<td>一样 作用是:表示行或列的标题 scope="col"为列标题  scope="row"为行标题-->
+            <th scope="col">Saturday</th>
+            <th scope="col">Sunday</th>
+        </tr>
+        <tr>
+            <th scope="row">Tickets sold:</th>
+            <td>120</td>
+            <td>135</td>
+        </tr>
+        <tr>
+            <th scope="row">Total sales:</th>
+            <td>$600</td>
+            <td>$675</td>
+        </tr>
+    </table>
+    <hr>
+    <table> <!-- 跨列显示 -->
+        <tr>
+            <th></th>
+            <th>9am</th>
+            <th>10am</th>
+            <th>11am</th>
+            <th>12am</th>
+        </tr>
+        <tr>
+            <th>Monday</th>
+            <td colspan="2">Geography</td>  <!--colspan:跨列  colspan="2":跨两列-->
+            <td>Math</td>
+            <td>Art</td>
+        </tr>
+        <tr>
+            <th>Tuesday</th>
+            <td colspan="3">Gym</td>
+            <td>Home Ec</td>
+        </tr>
+    </table>
+    <hr>
+    <table> <!-- 跨行显示 -->
+        <tr>
+            <th></th>
+            <th>ABC</th>
+            <th>BBC</th>
+            <th>CNN</th>
+        </tr>
+        <tr>
+            <th>6pm - 7pm</th>
+            <td rowspan="2">Movie</td> <!-- rowspan:跨行  rowspan="2"跨两行-->
+            <td>Comedy</td>
+            <td>News</td>
+        </tr>
+        <tr>
+            <th>7pm - 8pm</th>
+            <td>Sport</td>
+            <td>Current Affairs</td>
+        </tr>
+    </table>
+    <hr>
+    <table> <!--长表格-->
+        <thead> <!--存放表格的标题-->
+            <tr>
+                <th>Date</th>
+                <th>Income</th>
+                <th>Expenditure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>2st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>3st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>4st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>5st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>6st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>7st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>8st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>9st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>10st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>11st January</th>
+                <td>250</td>
+                <td>36</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th></th>
+            <td>1111</td>
+            <td>2222</td>
+        </tfoot>
+    </table>
+</body>
+</html>
