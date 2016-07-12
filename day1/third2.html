@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //显示钟表
+        function startTime()
+        {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            t = setTimeout('startTime()',500);
+        }
+
+        function checkTime(i)
+        {
+            if (i<10)
+            {
+                i= "0" + i
+            }
+            return i;
+        }
+    </script>
+</head>
+<body onload="test(11)()">
+<div id="txt"></div>
+
+<form onsubmit="return validate_form(this)">
+    <input id="email" type="email">
+    <input type="submit" value="提交">
+</form>
+<!--<div onmouseover="onMouseOver(this)" onmousedown="onMouseDwon(this)" onmouseup="onMouseUp(this)" onmouseout="onMouseOut(this)" style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">
+    把鼠标移到上面
+</div>-->
+
+<button onclick="http()">获取网络</button>
+
+</body>
+<script src="test.js"></script>
+<script>
+    function validate_required(field, alerttxt)
+    {
+        with (field) {
+            if (value == null || value == "") {
+                alert(alerttxt);
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function validate_form(thisform)
+    {
+        with (thisform)
+        {
+            if (validate_required(email,"Email must be filled out!") == false)
+            {
+                email.focus();
+                return false
+            }
+        }
+    }
+
+    function onMouseOver(id){
+        id.innerHTML = "谢谢";
+    }
+
+    function onMouseOut(id){
+        id.innerHTML = "把鼠标移到上面";
+    }
+
+    function onMouseDwon(id){
+        id.innerHTML = "按下鼠标";
+    }
+
+    function onMouseUp(id){
+        id.innerHTML = "抬起鼠标";
+    }
+
+    function http(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(xhr.status == 200 && xhr.readyState == 4){
+                alert(xhr.responseText);
+            }
+        }
+
+        xhr.open("POST", "http://115.29.205.93/tests/pay.php", true);
+        xhr.send(JSON.stringify({
+            channel: "alipay_wap",
+            amount: 1
+        }));
+    }
+</script>
+</html>

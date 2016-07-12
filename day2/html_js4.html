@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function f1(){  //创建数组的第一种方式
+            var arr=new Array();  //()可以省略不写
+            arr[0]=1;
+            arr[3]=2;
+            arr[5]='abc';
+            alert(arr.length);
+            alert(arr[1]);
+            alert(arr[3]);
+            alert(arr[5]);
+
+            alert(arr);
+        }
+        function f2(){ //第二种方式
+            var arr=[];
+            arr[0]=1;
+            arr[3]=22;
+            var arr = [1,2,3,4,5,6];
+            arr[7]=11;
+            alert(arr.length);
+            alert(arr);
+        }
+        function f3(){ //多维数组的创建
+            var arr = new Array();
+            arr[0]=[1,2,3,4,5];
+            arr[1]=[6,7,8,9,10,11,12,13];
+            arr[2]=[14,15,16,17,18,19];
+            for(var i=0;i<arr.length;i++){
+                for(j=0;j<arr[i].length;j++){
+                    alert(arr[i][j]);
+                }
+            }
+            alert(arr);
+        }
+        function f4(){ //数组常用的属性和方法
+            var arr=[11,22,33,44];
+            arr.length = 2;  //数组的长度可以写,后面的被砍掉
+            alert(arr);
+            alert(typeof arr);
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="数组的使用" onclick="f2()"/>
+</body>
+</html>

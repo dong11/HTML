@@ -1,0 +1,56 @@
+<html>
+<head>
+    <script>
+        function f1(){
+            var a1 = [1, 2, 3];
+            var str = a1.join("-");
+            alert(str);
+        }
+        function f2(){
+            var a1 = [1, 2, 3];
+            var a2 = [4, 5, 6];
+            var a3 = a1.concat(a2); //数组连接
+            alert(a3);
+        }
+        function f4(){
+            var a1 = [1, 2, 3];
+            var a2 = a1.reverse(); //是对原有数组翻转
+            alert(a2);
+            alert(a1);  //原数组变了
+        }
+        function f5(){
+            var a1 = [1, 2, 3, 4, 5, 6];
+            var a2 = a1.slice(2,4); //对数组截取
+            alert(a2);
+            alert(a1); //原数组没有变化
+        }
+        function f6(){
+            var a1 = [5, 1, 7, 2, 8];
+            var a2 = a1.sort(); //从小到大
+            alert(a2);
+        }
+        function f7(){
+            var a1 = [15, 111, 7, 22, 88];
+            var a2 = a1.sort(); //默认按照字典顺序排序
+            alert(a2);
+        }
+        function f8(){
+            var a1 = [15, 111, 7, 22, 88];
+            var a2 = a1.sort(function(t1, t2){
+                return t2-t1;
+            });
+            alert(a2);
+        }
+        function f9(){  //按照字符串长度排序
+            var a1 = ['abc', 'bb', 'casd', 'a'];
+            var a2 = a1.sort(function(t3, t4){
+                return t4.length-t3.length;
+            });
+            alert(a2);
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="click me" onclick="f1()"/>
+</body>
+</html>

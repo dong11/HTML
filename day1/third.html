@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn" onclick="test()">打开</button>
+    <button onclick="testPerson()">创建Person</button>
+    <button onclick="ifElse()">判断语句</button>
+    <button onclick="toDay()">今天</button>
+</body>
+<script type="text/javascript">
+    function test(){
+        var btn = document.getElementById("btn");
+        alert(btn.innerText);
+        btn.innerHTML = "关闭";
+        btn.style.background = "#ff0000";
+    }
+
+    function Person(){
+        Person.prototype.name = "zhangsan";
+        Person.prototype.age = 18;
+        Person.prototype.gender = false;
+        car = "Volvo";
+        return this;
+    }
+
+    Person.prototype.show = function() {
+        alert(Person.prototype.name + ":" + Person.prototype.age + ":" + Person.prototype.gender + ":" + car);
+    }
+
+    function testPerson(){
+        var person = new Person();
+        person.show();
+    }
+
+    function ifElse(){
+        if(5 > 8){
+            alert("条件为真");
+        } else {
+            alert("条件为假");
+        }
+    }
+
+    function toDay(){
+        var day = new Date().getDate();
+        alert(day);
+        switch (day){
+            case 7:
+                x = "Today it's Sunday";
+                break;
+            case 1:
+                x = "Today it's Monday";
+                break;
+            case 2:
+                x = "Today it's Tuesday";
+                break;
+            case 3:
+                x = "Today it's Wednesday";
+                break;
+            case 4:
+                x = "Today it's Thursday";
+                break;
+            case 5:
+                x = "Today it's Friday";
+                break;
+            case 6:
+                x = "Today it's Saturday";
+                break;
+        }
+        alert(x);
+    }
+
+    var person = new Person();
+    for(var x in person){ //获取对象属性
+        console.log(person[x]);
+    }
+
+    var arr = ["a", "b", "c"];
+    var i = 0;
+    while(arr[i]){
+        console.log(arr[i]);
+        i++;
+    }
+
+    try
+    {
+        adddlert("Welcome guest!");  //adddlert没这个方法所以会出错 执行catch语句
+    }
+    catch(err)
+    {
+        txt="本页有一个错误。\n\n";
+        txt+="错误描述：" + err.message + "\n\n";
+        txt+="点击确定继续。\n\n";
+        alert(txt);
+    }
+
+    try
+    {
+        var x = "";
+        if(x=="")    {
+            alert("空的");
+            throw "empty";
+        }
+        if(isNaN(x)) throw "not a number";
+        if(x>10)     throw "too high";
+        if(x<5)      throw "too low";
+    } catch(err) {
+        var y = document.getElementById("btn");
+        y.innerHTML="Error: " + err + ".";
+    }
+</script>
+</html>

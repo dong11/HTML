@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<!--display属性-->
+<head>
+    <style>
+        #d1{
+            width:200px;
+            height:100px;
+            background-color:red;
+            color:white;
+            font-size:40px;
+            cursor:wait;
+            display:inline; <!-- 改为行内标记 -->
+
+        }
+        #d2{
+            width:200px;
+            height:100px;
+            background-color:blue;
+            color:white;
+            font-size:40px;
+            cursor:pointer;
+            display:inline; <!-- 改为行内标记 -->
+        }
+    </style>
+    <style>
+        .s1{
+            border: 8px solid #000;
+            -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            padding: 5px 5px 5px 15px;
+        }
+        .s2{
+            float:left;
+            height:40px;
+            line-height:40px;
+            padding-left:0.8em;
+            padding-right:0.8em;
+            border-top-left-radius:8px;
+            border-top-right-radius:8px;
+            /*background-image:url(image/headerTiny.png);*/
+            backgrount-repeat:repeat-x;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">hello1</div>
+<!--标记d2会另起一行显示-->
+<div id="d2">hello2</div>
+<div class="s1">在浏览器里能看到边框颜色渐变效果</div>
+<a class="s2" href="#">打开百度</a>
+</body>
+</html>

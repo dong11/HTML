@@ -1,0 +1,48 @@
+<html>
+<!--函数的使用-->
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function add(a1, a2){
+            return a1+a2;
+        }
+        function test(){
+            var sum = add(1, 1);
+            alert(sum);
+        }
+        function test2(){
+            //  alert(typeof add);
+            alert(add instanceof Function);  //函数是Function类型的实例
+            var f2 = add;           //存放的是对象的地址
+            add = null;              //add指向空
+            var sum = f2(1, 1);         //等价于 add(1, 1);
+            alert(sum);
+        }
+        function add2(arg1, arg2){
+            //return  arg1 + arg2;
+            return arguments[0] + arguments[1];
+        }
+        function add3(arg1, arg2){   //首先指向一个对象
+            return arg1+arg2+100;
+        }
+        function add3(){    //指向了另一个对象
+            return arguments[0]+arguments[1];
+        }
+        function test3(){
+            //var sum = add2(1);         //结果为NaN,因为arg2是undifined
+            //var sum(1, 1, 1);    //结果为2
+            //var sum=add(1, 1);
+            //var sum = add2(1, 1, 1);
+            var sum = add3(1, 1);
+            alert(sum);
+        }
+
+        function test4(){
+//            alert(("100" !== 100));
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="click me" onclick="test4()"/>
+</body>
+</html>

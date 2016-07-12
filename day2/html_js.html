@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js1.js"></script>
+    <script>
+        function clickA(event){
+            alert('你点击了连接');
+            event.cancelBubble = true;
+        }
+        function clickDiv(event){
+            alert('你点击了Div');
+        }
+    </script>
+    <style>
+        #d1{
+            width:200px;
+            height:200px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body style="font-size:30px;">
+    <input id="b1" type="button" value="点我吧"/>
+
+    <div id="d1" onclick="clickDiv(event);">
+        <a href="javascript:;" onclick="clickA(event);">click5</a>
+    </div>
+</body>
+</html>

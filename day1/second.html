@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>first html</title>
+    <!--refresh:刷新-->
+    <!--<meta http-equiv="refresh" content="1;url=http://blog.csdn.net/dawanganban'">-->
+    <!-- 表示每隔1秒向url地址刷新 -->
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!--引入一个样式文件-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    hello word
+    <a href="http://www.baidu.com" title="确定打开?" target="_blank">打开</a>
+
+    <p>
+        <a href="first.html">
+            <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
+        </a>
+    </p>
+
+    <p>
+        <a href="mailto:hwongrex@qq.com?subject=hello">发邮件</a>
+    </p>
+
+    <p><a name="top">跳到这里</a></p>
+
+    <p>
+        <table border="1" width="60%" cellpadding="10" cellspacing="0">
+
+            <tr> <!-- 行 -->
+                <td>表格一</td> <!-- 列 --> <!--第一行第一列-->
+                <td>表格二</td> <!--第一行第二列-->
+            </tr>
+            <tr>
+                <td>BIAOGE</td>
+                <td>BIAOGE</td>
+            </tr>
+
+        </table>
+    </p>
+    <p>
+        <form action="http://www.baidu.com">
+            <input type="text" name="username" value="缺省值"/><!--必须加name-->
+            <input type="submit" value="确认"/>
+            <input type="password" name="pwd"/> <!--必须加name-->
+            <input type="radio" name="gender" value="m"/><!--必须加name和value-->
+            <input type="file" name="file1"/>
+            <input type="checkbox" name="interest" value="fishing"/>
+            <input type="hidden" name="userId" value="123">
+            <input type="reset" value="取消"/>
+            <select name="city" multiple="multiple">
+                <option value="bj">北京</option>
+                <option value="wh">武汉</option>
+                <option value="nj">南京</option>
+            </select>
+            <textarea name="desc" cols="2" rows="2"></textarea>
+        </form>
+
+    </p>
+
+</body>
+</html>

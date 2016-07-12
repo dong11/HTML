@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<!--当按键后，去调用test-->
+<body onkeydown="test()">
+<h1>小球上下左右移动</h1>
+<canvas id="test" width="400px" height="300px" style="background-color:black">
+</canvas>
+<script type="text/javascript">
+
+    //得到画布
+    var canvas1 = document.getElementById("test");
+
+    //定义一个位置变量
+    var ballX = 80;
+    var ballY = 80;
+
+    //得到绘图上下文
+    var cxt = canvas1.getContext("2d");
+    drawBall();
+    function drawBall(){
+        //画出一个红色的圆球
+        cxt.beginPath();  //要注意闭合路径
+        cxt.fillStyle="#FF0000";
+        cxt.arc(ballX,ballY,10,0,360,true);
+        cxt.closePath();
+        cxt.fill();
+    }
+
+    //现在按键盘上ASDW移动小球
+    //说明：当我们按下一个键，实际上触发了一个onkeydown事件
+    function test(){
+        var code = event.keyCode;  //键盘上字幕的ASCII码
+        switch(code){
+            case 87:
+                ballY = ballY - 10;
+                break;
+            case 68:
+                ballX = ballX + 10;
+                break;
+            case 83:
+                ballY = ballY + 10;
+                break;
+            case 65:
+                ballX = ballX - 10;
+                break;
+        }
+        //把画布清理
+        cxt.clearRect(0,0,400,300);
+        //重新绘制
+        drawBall();
+    }
+</script>
+</body>
+</html>

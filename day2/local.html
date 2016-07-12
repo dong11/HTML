@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo">点击获取地理坐标</p>
+<button onclick="getLocation()">试一下</button>
+<div id="mapholder" style="width:600px;height:500px;"></div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=kuMu227AZc6PaqLLCUHkl9a2"></script>
+<script>
+    var x = document.getElementById("demo");
+    function getLocation(){
+        if(navigator.geolocation){ //判断是否支持地理定位
+            //如果支持,则运行getCurrentPosition()方法
+//            navigator.geolocation.getCurrentPosition(showPosition);
+//            navigator.geolocation.getCurrentPosition(showPosition, showError);
+            navigator.geolocation.watchPosition(showPosition);
+        } else {
+            //如果不支持,则向用户显示一段消息
+            x.innerHTML = "该浏览器不支持地理定位";
+        }
+    }
+
+    //获取地理位置并显示
+    function showPosition(position){
+        x.innerHTML="Latitude: " + position.coords.latitude +
+                "<br />Longitude: " + position.coords.longitude;
+
+        // 百度地图API功能
+        var map = new BMap.Map("mapholder");
+        var point = new BMap.Point(position.coords.longitude, position.coords.latitude); // 创建点坐标
+        map.centerAndZoom(point,15);                     // 初始化地图,设置中心点坐标和地图级别。
+        map.enableScrollWheelZoom();
+    }
+
+    //错误处理函数
+    function showError(error){
+        switch(error.code)  //错误码
+        {
+            case error.PERMISSION_DENIED:  //用户拒绝
+                x.innerHTML="User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:  //无法提供定位服务
+                x.innerHTML="Location information is unavailable."
+                break;
+            case error.TIMEOUT:  //连接超时
+                x.innerHTML="The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:  //未知错误
+                x.innerHTML="An unknown error occurred."
+                break;
+        }
+    }
+</script>
+</body>
+</html>

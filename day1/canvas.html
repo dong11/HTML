@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <canvas id="c" width="200" height="200" style="border:1px solid red" onmousemove="mousexy(envent)"></canvas>
+
+</body>
+<script type="text/javascript">
+    var c = document.getElementById("c");
+    var cxt = c.getContext("2d");
+    cxt.fillStyle = "#ff0000";
+    cxt.fillRect(0,0,100,100);
+    cxt.fillStyle = "#00ff00";
+    cxt.fillRect(100, 100, 100, 100);
+    cxt.stroke();
+</script>
+</html>

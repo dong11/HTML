@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        /*number--->string
+         string---->number
+         */
+        function f1(){  //字符串变数字
+//                  var str1='fsfs';     读出NaN
+//                  var str1="1234fsfs";  可以读出1234
+//                  var str1="fsfs1234";   不可以读出
+//                  var str1="22323.08";
+            var str1='1234.2';
+            //window.parseInt();  window可以省略
+            var n1 = parseInt(str1);
+            alert(n1);
+//js浮点运算会有误差，先放大x倍，再缩小x倍
+                  var n2 = parseFloat(str1);
+            //undefined + 数字 ＝ NaN
+            alert(n1+100);
+            alert(n2);
+        }
+        function f2(){
+            var n1 = 100;
+            //number--->Number(对应的包装类型)  再调用toString();
+            var s1 = n1.toString();
+            //      var s1=n1+'';
+        }
+
+        function f4(){ //string的方法
+            var str1="abcdef";
+            var str2=str1.substring(1,4);
+            alert(str2);
+        }
+
+        function f5(){
+            var str="asdfas12323adfasf23423";
+            //在js中用/reg/,在执行时，会将//内的内容转换成一个RegExp对象
+            var reg=/[0-9]+/g;
+            //reg中是一个对象，不是字符串,注意加一个g搜索整个字符串，还有i忽略大小写。
+            var arr=str.match(reg);
+            alert(arr);
+        }
+
+        function f6(){
+            var str1="sdf1223asdfasf23423";
+            var reg=/[0-9]+/;
+            //alert(typeof reg);
+            alert(reg instanceof RegExp);
+            var index = str1.search(reg);
+            alert(index);
+        }
+
+        function f7(){
+            var str1="sdf444asdfadf4423";
+            var reg=/[0-9]+/g;
+            var str2 = str1.replace(reg,'888');
+            alert(str2);
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="演示基本数据类型" onclick="f7();"/>
+</body>
+</html>
