@@ -1,0 +1,21 @@
+
+/* color:前景色   background-color:背景色 */
+
+/* 三种创建颜色的方法 */
+h1 {
+    color: DarkCyan; /* 通过名字 */
+    opacity: 0.5; /* 透明度 */
+}
+
+h2 {
+    color: #ee3e80; /* 通过16进制 */
+}
+
+p {
+    /*color: rgb(100, 100, 90); !* 通过rgb值 *!*/
+    color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: rgb(200, 200, 200);
+}

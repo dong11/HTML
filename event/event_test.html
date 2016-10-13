@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button onclick="event_test('1')" value="value1">测试点击事件1</button>
+    <button onclick="event_test('2')">测试点击事件2</button>
+    <button onclick="event_test('3')">测试点击事件3</button>
+
+</body>
+
+<script>
+    var btn = document.getElementsByTagName('button');
+    for(var i = 0; i < btn.length; i++){
+        btn[i].addEventListener("click", function(){
+            alert(this.value);
+            alert(this.firstChild.nodeValue);
+        });
+    }
+
+    function event_test(str){
+        alert("测试" + str);
+    }
+</script>
+
+</html>

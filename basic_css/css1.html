@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 使用外部CSS -->
+    <!--href:链接的文件  type:链接文件的类型 rel:与被链接文件的关系-->
+    <link href="css/css1.css" type="text/css" rel="stylesheet">
+
+    <!-- 使用内部CSS 当外部和内部CSS有相同时,按照内部CSS执行 (就近原则)-->
+    <style type="text/css">
+        h2, h3 {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>From Garden to Plate</h1>
+    <p>A <i>potager</i> is a French term for an ornamental vegetable or kitchen garden ...</p>
+    <h2>What to Plant</h2>
+    <p>Plants are chosen as much for their functionality as for their color and from ...</p>
+    <h3>This is h3</h3>
+    <p style="color: gold">This is a Paragraph</p>
+
+    <!-- CSS选择器-->
+    <!-- *{}: 应用于页面中的所有元素 -->
+    <!-- h1, h2, h3 {}: 应用于<h1><h2><h3>元素中-->
+    <!-- .note {}: 应用于所有class特性值为note的元素-->
+    <!-- p.note {}: 只应用于class特性值为note的<p>元素-->
+    <!-- #introduction {}: 应用于id特性值为introduction的元素 -->
+    <!-- li>a {}: 应用于所有父元素为<li>的<a>元素(对页面中的其他<a>元素不起作用)-->
+    <!-- p a {}:应用于所有位于<p>元素中的<a>元素, 不论它们之间有没有嵌套其他元素 -->
+    <!-- h1+p {}: 应用于<h1>元素之后的第一个<p>元素 (对其他<p>元素不起作用)-->
+    <!-- h1~p {}: 如果有两个<p>元素均为<h1>的兄弟元素,那么这些规则对两个<p>元素都起作用 -->
+</body>
+</html>
