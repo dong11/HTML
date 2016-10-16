@@ -1,0 +1,30 @@
+.top_footer_wrap {
+    width: 100%;
+    height: 10%;
+    font-size: 0;
+}
+
+.title_wrap {
+    width: 100%;
+    height: 20%;
+    font-size: 0;
+}
+
+.content_wrap {
+    width: 100%;
+    height: 60%;
+    font-size: 0;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+p{
+    margin-left: 145px;
+    font-size: 20px;
+}
+span{
+    margin-left: 145px;
+    color: #999;
+}
