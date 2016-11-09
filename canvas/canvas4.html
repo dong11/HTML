@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RadialGradient-径向渐变</title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            var ctx = canvas.getContext("2d");
+            var g1 = ctx.createRadialGradient(400, 0, 0, 400, 0, 400);//开始圆心,开始半径,结束圆心,结束半径
+            g1.addColorStop(0.1, "rgb(255, 255, 0)");
+            g1.addColorStop(0.3, "rgb(255, 0, 255)");
+            g1.addColorStop(1, "rgb(0, 255, 255)");
+            ctx.fillStyle = g1;
+            ctx.fillRect(0, 0, 500, 500);
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+</body>
+</html>

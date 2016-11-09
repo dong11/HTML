@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shadow</title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext('2d');
+            context.translate(0, 50);
+            context.shadowOffsetX = 20;
+            context.shadowOffsetY = 20;
+            context.shadowColor = "gray"; //阴影颜色
+            context.shadowBlur = 0.35;  //模糊度
+
+            for(var i = 0;i < 3;i++){
+                create5Start(context);
+                context.fill();
+                context.translate(80, 80);
+            }
+        }
+
+        function create5Start(context){
+            var dx = 100;
+            var dy = 0;
+            var s = 50;
+            context.beginPath();
+            context.fillStyle = "rgba(255, 0, 0, 0.5)";
+            var dig = Math.PI / 5*4;
+            for(var i = 0;i < 5;i++){
+                var x = Math.sin(i*dig);
+                var y = Math.cos(i*dig);
+                context.lineTo(dx+x*s, dy+y*s);
+            }
+            context.closePath();
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+</body>
+</html>

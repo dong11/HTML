@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>globalCompositeOperation</title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            var ctx = canvas.getContext('2d');
+            var oprtns = new Array(
+                    "source-atop", //显示原图层不重叠部分和新图层重叠部分
+                    "source-in", //只显示新图层重叠部分
+                    "source-out", //只显示新图层不重叠部分
+                    "source-over", //默认值, 新图层覆盖在原图层之上
+                    "destination-atop", //显示原图层重叠部分和新图层不重叠部分
+                    "destination-in", //只显示原图层重叠部分
+                    "destination-out", //只显示原图层不重叠部分
+                    "destination-over", //原图层覆盖在新图层之上
+                    "lighter",  //重叠部分加色处理
+                    "copy", //只绘制新图层
+                    "xor"  //显示不重叠部分, 重叠部分变为透明
+            );
+            i = 9;
+            ctx.fillStyle = "blue";
+            ctx.fillRect(10, 10, 60, 60);
+            ctx.globalCompositeOperation = oprtns[i];
+            ctx.beginPath();
+            ctx.fillStyle = "red";
+            ctx.arc(60, 60, 30, Math.PI*2, false);
+            ctx.fill();
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>translate、scale、rotate</title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = "#eeeeef";
+            ctx.fillRect(0, 0, 500, 500);
+            ctx.translate(200, 50);
+            ctx.fillStyle = "rgba(255, 0, 0, 0.25)";
+            for(var i = 0; i < 50; i++){
+                ctx.translate(25, 25);
+                ctx.scale(0.95, 0.95);
+                ctx.rotate(Math.PI/10);
+                ctx.fillRect(0, 0, 100, 100);
+            }
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+</body>
+</html>
