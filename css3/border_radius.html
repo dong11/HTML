@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-radius:圆角</title>
+    <style>
+        .rcorners1 {
+            border-radius: 25px;
+            background: #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners2 {
+            border-radius: 25px;
+            border: 2px solid #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners3 {
+            border-radius: 25px;
+            background: url(add.gif);  /*指定背景图片*/
+            background-position: left top;
+            background-repeat: repeat;  /*重复填满背景*/
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners4 {
+             border-radius: 15px 50px 30px 5px;  /*分别为:左上角 右上角 右下角 左下角*/
+             background: #8AC007;
+             padding: 20px;
+             width: 200px;
+             height: 150px;
+         }
+
+        .rcorners5 {
+            border-radius: 15px 50px 30px;  /*分别为:左上角 右上角 右下角   左下角省略==右上角*/
+            background: #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners6 {
+            border-radius: 15px 50px;  /*分别为:左上角 右上角  左下角省略==右上角  右下角省略==左上角*/
+            background: #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners7 {
+            border-radius: 50px/15px;
+            background: #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners8 {
+            border-radius: 15px/50px;
+            background: #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .rcorners9 {
+            border-radius: 50%;;
+            background: #8AC007;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>border-radius 属性允许向元素添加圆角。</p><br>
+    <p>指定背景颜色元素的圆角:</p>
+    <div class="rcorners1">圆角</div>
+    <p>指定边框元素的圆角:</p>
+    <div class="rcorners2">圆角</div>
+    <p>指定背景图片元素的圆角:</p>
+    <div class="rcorners3">圆角</div>
+    <p>指定4个不同弧度的圆角:</p>
+    <div class="rcorners4">圆角:四个角不同弧度</div>
+    <p>指定3个不同弧度的圆角:</p>
+    <div class="rcorners5">圆角:三个角不同弧度</div>
+    <p>指定2个不同弧度的圆角:</p>
+    <div class="rcorners6">圆角:三个角不同弧度</div>
+    <br>
+    <p>椭圆边角</p>
+    <div class="rcorners7">椭圆边角 border-radius: 50px/15px</div>
+    <br>
+    <div class="rcorners8">椭圆边角 border-radius: 15px/50px;</div>
+    <br>
+    <div class="rcorners9">椭圆边角 border-radius: 50%;;</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3--border(边框)</title>
+    <style>
+        .border-radius {
+            border: 2px solid #a1a1a1;
+            padding: 10px 40px;
+            background: #dddddd;
+            width: 300px;
+            border-radius: 25px;
+        }
+
+        .box-shadow {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            box-shadow: 10px 10px 5px #888888;
+            text-align: center;
+        }
+
+        .border-image {
+            border: 15px solid transparent;
+            width: 250px;
+            padding: 10px 20px;
+        }
+
+        .round {
+            -webkit-border-image: url(add.gif) 30 30 round; /* Safari 5 and older */
+            -o-border-image: url(add.gif) 30 30 round; /* Opera */
+            border-image: url(add.gif) 30 30 round;
+        }
+
+        .stretch {
+            -webkit-border-image: url(add.gif) 30 30 stretch; /* Safari 5 and older */
+            -o-border-image: url(add.gif) 30 30 stretch; /* Opera */
+            border-image: url(add.gif) 30 30 stretch;
+        }
+    </style>
+</head>
+<body>
+<div class="border-radius">border-radius 属性为元素添加圆角边框！</div>
+<br>
+<div class="box-shadow">box-shadow 盒阴影</div>
+<br>
+
+<div>
+    <p><b>注意: </b> Internet Explorer 不支持 border-image 属性。</p>
+    <p> border-image 属性用于设置图片的边框。</p>
+
+    <div class="border-image round">这里，图像平铺（重复）来填充该区域。</div>
+    <br>
+    <div class="border-image stretch">这里，图像被拉伸以填充该区域。</div>
+
+    <p>这是我们使用的图片素材：</p>
+    <img src="add.gif"/>
+</div>
+</body>
+</html>

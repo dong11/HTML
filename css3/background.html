@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3--background(背景)</title>
+    <style>
+        .bg-image {
+            background-image: url(add.gif);
+            background-position: right bottom, left top;
+            background-repeat: repeat;  /*no-repeat:不重复*/
+            padding: 15px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .bg-size {
+            background-image: url(add.gif);
+            background-size:15px 15px;
+            background-repeat:no-repeat;
+            padding: 15px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .bg-size2 {
+            background-image: url(add.gif);
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            padding: 15px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .bg-Origin{
+            background:url(add.gif);
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            background-origin: content-box;
+        }
+
+        .bg-clip {
+            border: 10px dotted black;  /*dotted:虚线*/
+            padding:35px;
+            background: yellow;
+            width: 100px;
+            height: 100px;
+        }
+
+        .bg-clip1 {
+            border: 10px dotted black;  /*dotted:虚线*/
+            padding:35px;
+            background: yellow;
+            background-clip: padding-box;
+            width: 100px;
+            height: 100px;
+        }
+
+        .bg-clip2 {
+            border: 10px dotted black;  /*dotted:虚线*/
+            padding:35px;
+            background: yellow;
+            background-clip: content-box;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <br>
+    <div class="bg-size"></div>
+    <br>
+    <div class="bg-size2">铺满</div>
+    <br>
+    <div class="bg-Origin"></div>
+    <br>
+    <div class="bg-clip">背景剪裁: 未裁剪</div>
+    <br>
+    <div class="bg-clip1">背景剪裁: padding-box: 边框线裁剪</div>
+    <br>
+    <div class="bg-clip2">背景剪裁: content-box: 内容裁剪</div>
+</body>
+</html>
